@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & AI Optimization - עוזר לגוגל ול-AI להבין את האתר -->
     <title>סרנדיפיטי | סדנאות העשרה, חיבור וערכים לארגונים וקהילות</title>
+    <meta name="description" content="סרנדיפיטי מציעה סדנאות חווייתיות לקידום אישי, חיבור אנושי ופתיחת הזדמנויות. מיועד לארגונים, קהילות נשים, צעירים וצוותי חינוך.">
+    <meta name="keywords" content="סרנדיפיטי, סדנאות העשרה, פיתוח ארגוני, קהילות נשים, העצמה, חיבור אנושי, שרון גורן, צופיה שפירא ברחד">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="סרנדיפיטי | להפוך מקריות להזדמנות">
+    <meta property="og:description" content="סדנאות העשרה וערכים לארגונים וקהילות. בואו לגלות איך לייצר הזדמנויות חדשות.">
+    <meta property="og:image" content="https://i.postimg.cc/gcQkfqst/lwgw-hybwrym-m-ygwl.png">
+    <meta property="og:type" content="website">
+
+    <!-- Schema.org for Google & AI Intelligence -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "סרנדיפיטי - Serendipity Experience",
+      "description": "סדנאות העשרה וחיבור אנושי לארגונים וקהילות",
+      "url": "https://serendipity.co.il",
+      "logo": "https://i.postimg.cc/gcQkfqst/lwgw-hybwrym-m-ygwl.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IL"
+      }
+    }
+    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,28 +39,29 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- React & ReactDOM -->
+    <!-- React & Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-    
-    <!-- Babel for JSX -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
         body { font-family: 'Assistant', sans-serif; background-color: #faf6f0; scroll-behavior: smooth; }
         h1, h2, h3, h4 { font-family: 'Heebo', sans-serif !important; }
         .hero-gradient { background: radial-gradient(circle at top right, #615e8c 0%, #1c2a44 100%); }
         .floating-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
-        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(1deg); } 50% { transform: translateY(-20px) rotate(-1deg); } }
-        .animate-float { animation: float 8s ease-in-out infinite; }
-        .organic-shape { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; animation: morph 10s ease-in-out infinite; }
-        @keyframes morph { 0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; } 50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; } }
+        @keyframes float-anim { 0%, 100% { transform: translateY(0px) rotate(1deg); } 50% { transform: translateY(-20px) rotate(-1deg); } }
+        .animate-float-ui { animation: float-anim 8s ease-in-out infinite; }
+        .organic-shape { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; animation: morph-anim 10s ease-in-out infinite; }
+        @keyframes morph-anim { 0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; } 50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; } }
+        .glass-header { transition: all 0.4s ease; }
+        ::selection { background: rgba(201, 122, 99, 0.3); }
     </style>
 </head>
 <body>
     <div id="root"></div>
 
     <script type="text/babel">
+        // רכיב אייקונים יציב
         const Icon = ({ name, className = "w-6 h-6", color = "currentColor" }) => {
             const icons = {
                 sparkles: <React.Fragment><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></React.Fragment>,
@@ -44,8 +71,7 @@
                 send: <React.Fragment><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></React.Fragment>,
                 mail: <React.Fragment><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></React.Fragment>,
                 phone: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>,
-                mapPin: <React.Fragment><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></React.Fragment>,
-                star: <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>,
+                camera: <React.Fragment><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></React.Fragment>,
                 checkCircle: <React.Fragment><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></React.Fragment>,
                 arrowLeft: <React.Fragment><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></React.Fragment>,
                 quote: <React.Fragment><path d="M3 21c3 0 7-1 7-8V5H3v8h4c0 4.48-3.52 8-4 8Z"/><path d="M14 21c3 0 7-1 7-8V5h-7v8h4c0 4.48-3.52 8-4 8Z"/></React.Fragment>
@@ -58,6 +84,9 @@
         };
 
         const App = () => {
+            const logoUrl = "https://i.postimg.cc/gcQkfqst/lwgw-hybwrym-m-ygwl.png";
+            const formspreeId = "mdadkwrz"; 
+            
             const [formData, setFormData] = React.useState({ name: '', org: '', phone: '', email: '', message: '' });
             const [isSubmitting, setIsSubmitting] = React.useState(false);
             const [isSuccess, setIsSuccess] = React.useState(false);
@@ -69,11 +98,27 @@
                 return () => window.removeEventListener('scroll', handleScroll);
             }, []);
 
+            const audiences = [
+                { title: "נשים וארגוני נשים", desc: "סדנאות לקידום אישי, יצירת נטוורקינג ודיוק הקול האישי והמקצועי במרחב בטוח ומעצים." },
+                { title: "צעירים ומחלקות נוער", desc: "פעילות מעשירה לחיזוק הביטחון העצמי, פיתוח יוזמה וסקרנות חיובית לקראת העתיד." },
+                { title: "תושבים וקהילות", desc: "פעילות ערכית לבניית קהילה מגובשת, חיבורים מקומיים ותחושת שייכות עמוקה." },
+                { title: "גיל שלישי ופנסיונרים", desc: "מפגשי העשרה לגילוי מחדש של תשוקות, קשרים חברתיים ומשמעות בפרק החדש." },
+                { title: "עצמאיים ובעלי עסקים", desc: "כנסים ומפגשים ייחודיים לפתיחת דלתות לשיתופי פעולה עסקיים בלתי צפויים." },
+                { title: "צוותי חינוך וטיפול", desc: "יצירת תקשורת פתוחה, החלפת רעיונות וגישות ליצירת מערך תמיכה מקצועי ומפרה." }
+            ];
+
+            const galleryImages = [
+                "https://i.postimg.cc/MHZD8fSv/IMG-9522.jpg",
+                "https://i.postimg.cc/GmNd8vg3/IMG-8647.jpg",
+                "https://i.postimg.cc/qqjdkKCk/IMG-8639.jpg",
+                "https://i.postimg.cc/Gt3ZSpSr/avira-women.png"
+            ];
+
             const handleSubmit = async (e) => {
                 e.preventDefault();
                 setIsSubmitting(true);
                 try {
-                    const response = await fetch("https://formspree.io/f/mdadkwrz", {
+                    const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json", "Accept": "application/json" },
                         body: JSON.stringify(formData)
@@ -90,35 +135,53 @@
 
             return (
                 <div className="min-h-screen">
-                    <nav className={`fixed top-0 w-full z-[100] px-6 py-4 transition-all ${scrolled ? 'bg-[#1c2a44]/90 backdrop-blur-md shadow-xl' : 'bg-transparent'}`}>
+                    {/* Navigation */}
+                    <nav className={`fixed top-0 w-full z-[100] px-6 py-4 glass-header ${scrolled ? 'bg-[#1c2a44]/90 backdrop-blur-md shadow-xl' : 'bg-transparent'}`}>
                         <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
-                            <div className="flex items-center gap-4 cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-                                <div className="w-12 h-12 bg-white rounded-full p-1 shadow-lg overflow-hidden flex items-center justify-center">
-                                    <img src="https://i.postimg.cc/gcQkfqst/lwgw-hybwrym-m-ygwl.png" alt="לוגו" className="w-full h-full object-contain scale-110" />
+                            <div className="flex items-center gap-4 cursor-pointer group" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+                                <div className="w-12 h-12 bg-white rounded-full p-1 shadow-lg overflow-hidden flex items-center justify-center border border-white/20 transition-transform group-hover:scale-110">
+                                    <img src={logoUrl} alt="לוגו סרנדיפיטי" className="w-full h-full object-contain scale-110" />
                                 </div>
                                 <span className="font-bold text-xl tracking-tight">סרנדיפיטי</span>
                             </div>
                             <div className="hidden md:flex items-center gap-8">
-                                <button onClick={() => scrollTo('process')} className="hover:text-[#c97a63]">התהליך</button>
-                                <button onClick={() => scrollTo('about')} className="hover:text-[#c97a63]">אודות</button>
-                                <button onClick={() => scrollTo('contact')} className="bg-[#c97a63] px-6 py-2 rounded-full font-bold">בואו נדבר</button>
+                                <button onClick={() => scrollTo('process')} className="hover:text-[#c97a63] font-medium transition-colors">התהליך</button>
+                                <button onClick={() => scrollTo('gallery')} className="hover:text-[#c97a63] font-medium transition-colors">גלריה</button>
+                                <button onClick={() => scrollTo('audiences')} className="hover:text-[#c97a63] font-medium transition-colors">קהלים</button>
+                                <button onClick={() => scrollTo('about')} className="hover:text-[#c97a63] font-medium transition-colors">מי אנחנו?</button>
+                                <button onClick={() => scrollTo('contact')} className="bg-[#c97a63] px-8 py-2.5 rounded-full font-bold shadow-lg hover:bg-[#b86952] transition-all">בואו נדבר</button>
                             </div>
                         </div>
                     </nav>
 
-                    <header className="min-h-screen flex items-center hero-gradient text-white px-6 overflow-hidden">
-                        <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-16">
+                    {/* Hero Section */}
+                    <header className="relative min-h-screen flex items-center pt-20 hero-gradient text-white overflow-hidden">
+                        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col lg:flex-row items-center justify-between gap-16">
                             <div className="lg:w-3/5 text-center lg:text-right">
-                                <h1 className="text-7xl md:text-9xl font-black mb-6 leading-none tracking-tighter">סרנדיפיטי</h1>
-                                <p className="text-2xl md:text-4xl font-light mb-12 opacity-80">להפוך מקריות להזדמנות צומחת</p>
-                                <button onClick={() => scrollTo('contact')} className="bg-[#c97a63] px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-all flex items-center gap-3 mx-auto lg:mx-0">
-                                    הזמינו סדנה <Icon name="send" />
-                                </button>
+                                <h1 className="text-7xl md:text-[110px] font-black mb-10 leading-[0.9] tracking-tighter text-balance">
+                                    סרנדיפיטי
+                                    <div className="mt-6 flex flex-col gap-2 opacity-90">
+                                        <span className="block text-3xl md:text-5xl font-light tracking-normal">להפוך מקריות</span>
+                                        <span className="block text-3xl md:text-5xl font-light tracking-normal text-[#c97a63]">להזדמנות צומחת</span>
+                                    </div>
+                                </h1>
+                                <p className="text-xl md:text-2xl mb-14 max-w-2xl leading-relaxed font-light text-white/70 mx-auto lg:mx-0 text-balance">
+                                    סדנאות חווייתיות המעניקות כלים לקידום אישי, פתיחות ויוזמה במרחב של השראה וחיבור.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                                    <button onClick={() => scrollTo('contact')} className="px-12 py-5 rounded-full font-bold text-xl transition-all shadow-2xl hover:scale-105 bg-[#c97a63] flex items-center justify-center gap-3">
+                                        הזמינו סדנה <Icon name="send" />
+                                    </button>
+                                    <button onClick={() => scrollTo('process')} className="bg-white/5 backdrop-blur-md border border-white/20 text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-white/15 transition-all">
+                                        איך זה עובד?
+                                    </button>
+                                </div>
                             </div>
-                            <div className="lg:w-2/5 animate-float hidden lg:block">
+                            <div className="lg:w-2/5 animate-float-ui hidden lg:block">
                                 <div className="floating-card rounded-[3.5rem] p-12 text-right">
                                     <Icon name="sparkles" className="w-12 h-12 text-[#c97a63] mb-8" />
-                                    <p className="text-2xl font-light italic leading-relaxed border-r-4 border-[#c97a63] pr-6">
+                                    <h3 className="text-2xl font-bold mb-5 italic">Serendipity <span className="text-sm font-light opacity-50">(n)</span></h3>
+                                    <p className="text-xl font-light leading-relaxed italic text-white/90 border-r-4 border-[#c97a63] pr-6">
                                         "גילויים נעימים של דברים שלא חיפשנו, בזמן שחיפשנו משהו אחר לגמרי."
                                     </p>
                                 </div>
@@ -126,84 +189,147 @@
                         </div>
                     </header>
 
-                    <section id="process" className="py-32 bg-white px-6">
+                    {/* Quote Section */}
+                    <section className="py-24 relative flex justify-center items-center overflow-hidden bg-white">
+                        <div className="relative z-10 w-full max-w-4xl px-6">
+                            <div className="organic-shape bg-[#c97a63] text-white p-16 md:p-24 shadow-2xl text-center transform -rotate-1 relative">
+                                <Icon name="quote" className="absolute top-10 right-10 w-16 h-16 text-white/10" />
+                                <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight drop-shadow-lg">
+                                    "אם יוצאים מגיעים למקומות נפלאים"
+                                </h2>
+                                <p className="text-xl md:text-2xl font-light opacity-90 tracking-widest uppercase">— ד"ר סוס</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Process Section */}
+                    <section id="process" className="py-32 bg-white px-6 scroll-mt-20">
                         <div className="max-w-7xl mx-auto text-center">
-                            <h2 className="text-5xl font-black mb-20 text-[#1c2a44]">מה קורה במפגש?</h2>
-                            <div className="grid md:grid-cols-3 gap-12">
+                            <h2 className="text-5xl font-black mb-20 text-[#1c2a44]">מה קורה במפגש סרנדיפיטי?</h2>
+                            <div className="grid lg:grid-cols-3 gap-12 text-right">
                                 {[
-                                    { icon: "target", title: "דיוק אישי", desc: "תהליך של העשרה פנימית וזיקוק מטרות." },
-                                    { icon: "users", title: "חיבור אנושי", desc: "סשנים דינמיים המתרגלים הקשבה עמוקה ואמפתיה." },
-                                    { icon: "compass", title: "פתיחת הזדמנויות", desc: "יציאה עם ארגז כלים של סקרנות ויוזמה." }
+                                    { icon: "target", color: "#c97a63", title: "דיוק וקידום אישי", desc: "תהליך של העשרה פנימית וזיקוק מטרות לקידום אישי." },
+                                    { icon: "users", color: "#615e8c", title: "חיבור אנושי ערכי", desc: "סשנים דינמיים המתרגלים הקשבה עמוקה, אמפתיה ויצירת קשרים." },
+                                    { icon: "compass", color: "#c97a63", title: "פתיחת הזדמנויות", desc: "יציאה עם ארגז כלים של סקרנות ויוזמה המאפשרים לקסם להיכנס ליומיום." }
                                 ].map((item, i) => (
-                                    <div key={i} className="p-10 bg-[#faf6f0] rounded-[3rem] text-right">
-                                        <Icon name={item.icon} className="w-12 h-12 text-[#c97a63] mb-6" />
-                                        <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                                        <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                                    <div key={i} className="p-12 rounded-[3rem] bg-[#faf6f0] hover:bg-white hover:shadow-2xl transition-all duration-500 group border border-transparent hover:border-[#c97a63]/20">
+                                        <Icon name={item.icon} className="w-12 h-12 mb-6" color={item.color} />
+                                        <h3 className="text-3xl font-bold mb-6 text-[#1c2a44]">{item.title}</h3>
+                                        <p className="text-lg text-slate-600 leading-relaxed font-light">{item.desc}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </section>
 
-                    <section id="about" className="py-32 bg-[#faf6f0] px-6">
-                        <div className="max-w-6xl mx-auto">
+                    {/* Gallery Section */}
+                    <section id="gallery" className="py-32 px-6 bg-[#f8f9fc] scroll-mt-20">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="flex flex-col items-center mb-20 text-center">
+                                <Icon name="camera" className="w-10 h-10 mb-6 text-[#c97a63]" color="#c97a63" />
+                                <h2 className="text-4xl md:text-5xl font-black text-[#1c2a44]">רגעים של חוויות וחיבורים</h2>
+                            </div>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+                                {galleryImages.map((imgUrl, i) => (
+                                    <div key={i} className={`aspect-[4/5] bg-slate-200 rounded-[2.5rem] overflow-hidden shadow-2xl border-[10px] border-white transition-all hover:scale-[1.05] duration-500 cursor-pointer ${i % 2 === 0 ? 'md:translate-y-12 md:rotate-2' : 'md:-rotate-1'}`}>
+                                        <img src={imgUrl} alt="גלריה סרנדיפיטי" className="w-full h-full object-cover" />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Audiences Section */}
+                    <section id="audiences" className="py-32 bg-white px-6 scroll-mt-20">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="text-center mb-24">
+                                <h2 className="text-5xl font-black mb-6 text-[#1c2a44]">הסדנה שבנויה עבורכם</h2>
+                                <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">אנו מתאימות את התכנים למטרות הקהילה והארגון</p>
+                            </div>
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {audiences.map((aud, index) => (
+                                    <div key={index} className="bg-[#faf6f0] p-10 rounded-[3rem] border border-slate-50 hover:shadow-xl hover:bg-white transition-all text-right group">
+                                        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-[#c97a63] group-hover:text-white transition-colors">
+                                            <Icon name="checkCircle" className="w-7 h-7" />
+                                        </div>
+                                        <h4 className="font-bold text-2xl mb-5 text-[#1c2a44]">{aud.title}</h4>
+                                        <p className="text-slate-500 leading-relaxed font-light text-lg">{aud.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* About Section */}
+                    <section id="about" className="py-32 bg-[#faf6f0] px-6 scroll-mt-20">
+                        <div className="max-w-6xl mx-auto text-right">
                             <h2 className="text-5xl font-black text-center mb-24 text-[#1c2a44]">נעים להכיר</h2>
-                            <div className="grid md:grid-cols-2 gap-16">
+                            <div className="grid md:grid-cols-2 gap-20">
                                 {[
-                                    { name: "צופיה שפירא ברחד", role: "מפעילת סדנאות, מנחת אירועים", img: "https://i.postimg.cc/9QXTPpK2/Whats-App-Image-2026-02-01-at-11-51-38.jpg", desc: "אוהבת אנשים ואת העולם, בעלת נסיון של שנים רבות בהדרכה והנחיית קבוצות וניהול תוכניות חינוכיות, מאמינה שחיבור של אנשים מביא לנו רק טוב ואור", color: "#c97a63" },
-                                    { name: "שרון גורן", role: "יזמית, סטייליסטית, מרצה", img: "https://i.postimg.cc/Hn4Z4tkW/941863BD-07B3-46C0-80C9-34762066A290.jpg", desc: "בתהליך צמיחה אינסופי, אני פוגשת כל הזמן את הכוח המרפא והלא יאומן של הסרנדיפיטי. רוצה להעניק לכם את הכלים לזהות וליהנות מהקסם הזה.", color: "#615e8c" }
-                                ].map((p, i) => (
-                                    <div key={i} className="flex flex-col items-center lg:items-start text-right">
-                                        <img src={p.img} className="w-64 h-72 object-cover rounded-[3rem] shadow-xl mb-8" />
-                                        <h3 className="text-3xl font-bold mb-2">{p.name}</h3>
-                                        <p className="font-bold text-xl mb-4" style={{color: p.color}}>{p.role}</p>
-                                        <p className="text-slate-600 leading-relaxed">{p.desc}</p>
+                                    { 
+                                        name: "צופיה שפירא ברחד", 
+                                        role: "מפעילת סדנאות, מנחת אירועים", 
+                                        img: "https://i.postimg.cc/9QXTPpK2/Whats-App-Image-2026-02-01-at-11-51-38.jpg", 
+                                        desc: "אוהבת אנשים ואת העולם, בעלת נסיון של שנים רבות בהדרכה והנחיית קבוצות וניהול תוכניות חינוכיות, מאמינה שחיבור של אנשים מביא לנו רק טוב ואור", 
+                                        color: "#c97a63" 
+                                    },
+                                    { 
+                                        name: "שרון גורן", 
+                                        role: "יזמית, סטייליסטית, מרצה", 
+                                        img: "https://i.postimg.cc/Hn4Z4tkW/941863BD-07B3-46C0-80C9-34762066A290.jpg", 
+                                        desc: "בתהליך צמיחה אינסופי, אני פוגשת כל הזמן את הכוח המרפא והלא יאומן של הסרנדיפיטי. רוצה להעניק לכם את הכלים לזהות וליהנות מהקסם הזה.", 
+                                        color: "#615e8c" 
+                                    }
+                                ].map((person, i) => (
+                                    <div key={i} className="flex flex-col items-center lg:items-start">
+                                        <img src={person.img} className="w-72 h-80 rounded-[4rem] shadow-2xl border-4 border-white object-cover mb-8" />
+                                        <h3 className="text-4xl font-bold mb-2 text-[#1c2a44]">{person.name}</h3>
+                                        <p className="font-bold text-xl mb-6" style={{ color: person.color }}>{person.role}</p>
+                                        <p className="text-slate-600 text-lg leading-relaxed">{person.desc}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </section>
 
-                    <section id="contact" className="py-32 px-6 bg-white">
-                        <div className="max-w-4xl mx-auto">
+                    {/* Contact Section */}
+                    <section id="contact" className="py-32 px-6 scroll-mt-20 bg-white">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="text-center mb-20">
+                                <h2 className="text-5xl font-black mb-6 text-[#1c2a44]">צרו איתנו קשר</h2>
+                                <p className="text-xl text-slate-500">נשמח לבנות יחד את המפגש הבא שלכם</p>
+                            </div>
                             <div className="bg-[#615e8c] rounded-[4rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
-                                <div className="lg:w-1/2 p-12 text-white text-right">
-                                    <h2 className="text-4xl font-bold mb-8">בואו נדבר</h2>
-                                    <p className="text-xl font-light mb-12">השאירו פרטים ונחזור אליכם עם הצעה מותאמת אישית.</p>
-                                    <div className="space-y-6 opacity-80">
-                                        <div className="flex items-center gap-4"><Icon name="mail" /> sharon.goren81@gmail.com</div>
-                                        <div className="flex items-center gap-4"><Icon name="phone" /> 054-4919043</div>
+                                <div className="lg:w-2/5 p-16 text-white text-right flex flex-col justify-between">
+                                    <div>
+                                        <h3 className="text-4xl font-bold mb-8">בואו נדבר</h3>
+                                        <p className="text-xl opacity-80 mb-12">השאירו פרטים ונחזור אליכם בהקדם עם הצעה מותאמת.</p>
+                                    </div>
+                                    <div className="space-y-6 pt-10 border-t border-white/10">
+                                        <div className="flex items-center gap-5"><Icon name="mail" color="#c97a63" /> sharon.goren81@gmail.com</div>
+                                        <div className="flex items-center gap-5"><Icon name="phone" color="#c97a63" /> 054-4919043</div>
+                                        <div className="flex items-center gap-5"><Icon name="mapPin" color="#c97a63" /> פריסה ארצית</div>
                                     </div>
                                 </div>
-                                <div className="lg:w-1/2 p-12 bg-white">
+                                <div className="lg:w-3/5 p-16 bg-white">
                                     {isSuccess ? (
-                                        <div className="text-center py-12">
-                                            <Icon name="checkCircle" className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                                            <h3 className="text-2xl font-bold">תודה! נחזור אלייך בהקדם.</h3>
+                                        <div className="h-full flex flex-col items-center justify-center text-center py-20 animate-pulse">
+                                            <Icon name="checkCircle" className="w-16 h-16 text-green-500 mb-6" color="green" />
+                                            <h3 className="text-4xl font-bold text-[#1c2a44]">תודה רבה!</h3>
+                                            <p className="text-xl text-slate-500 mt-4">הפנייה התקבלה. נחזור אלייך בהקדם.</p>
                                         </div>
                                     ) : (
-                                        <form onSubmit={handleSubmit} className="space-y-6 text-right">
-                                            <div>
-                                                <label className="block text-sm font-bold text-slate-400 mb-2">שם מלא *</label>
-                                                <input type="text" required className="w-full p-4 bg-[#faf6f0] rounded-2xl outline-none focus:ring-2 focus:ring-[#c97a63]" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+                                        <form onSubmit={handleSubmit} className="grid gap-6 text-right">
+                                            <div className="grid md:grid-cols-2 gap-6">
+                                                <input type="text" required placeholder="שם מלא *" className="w-full px-6 py-4 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-[#c97a63]/10 bg-[#faf6f0]" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+                                                <input type="text" required placeholder="שם הארגון *" className="w-full px-6 py-4 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-[#c97a63]/10 bg-[#faf6f0]" value={formData.org} onChange={e => setFormData({...formData, org: e.target.value})} />
                                             </div>
-                                            <div>
-                                                <label className="block text-sm font-bold text-slate-400 mb-2">שם הארגון *</label>
-                                                <input type="text" required className="w-full p-4 bg-[#faf6f0] rounded-2xl outline-none focus:ring-2 focus:ring-[#c97a63]" value={formData.org} onChange={e => setFormData({...formData, org: e.target.value})} />
+                                            <div className="grid md:grid-cols-2 gap-6">
+                                                <input type="tel" required placeholder="מספר טלפון *" className="w-full px-6 py-4 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-[#c97a63]/10 bg-[#faf6f0]" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+                                                <input type="email" placeholder="מייל (רשות)" className="w-full px-6 py-4 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-[#c97a63]/10 bg-[#faf6f0]" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
                                             </div>
-                                            <div>
-                                                <label className="block text-sm font-bold text-slate-400 mb-2">טלפון *</label>
-                                                <input type="tel" required className="w-full p-4 bg-[#faf6f0] rounded-2xl outline-none focus:ring-2 focus:ring-[#c97a63]" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-bold text-slate-400 mb-2">אימייל (רשות)</label>
-                                                <input type="email" className="w-full p-4 bg-[#faf6f0] rounded-2xl outline-none focus:ring-2 focus:ring-[#c97a63]" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-bold text-slate-400 mb-2">הודעה (רשות)</label>
-                                                <textarea rows="3" className="w-full p-4 bg-[#faf6f0] rounded-2xl outline-none focus:ring-2 focus:ring-[#c97a63]" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
-                                            </div>
-                                            <button type="submit" disabled={isSubmitting} className="w-full py-5 bg-[#c97a63] text-white font-bold text-xl rounded-full shadow-lg hover:bg-[#b86952] transition-all">
+                                            <textarea rows="3" placeholder="הודעה (רשות)" className="w-full px-6 py-4 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-[#c97a63]/10 bg-[#faf6f0]" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
+                                            <button type="submit" disabled={isSubmitting} className="w-full py-5 rounded-full font-bold text-xl text-white shadow-lg bg-[#c97a63] hover:bg-[#b86952] transition-all">
                                                 {isSubmitting ? 'שולח...' : 'שליחת פרטים'}
                                             </button>
                                         </form>
@@ -213,8 +339,10 @@
                         </div>
                     </section>
 
-                    <footer className="py-12 text-center text-slate-400 text-sm bg-white">
-                        <p>© {new Date().getFullYear()} סרנדיפיטי - אומנות המקריות הטובה.</p>
+                    <footer className="py-20 text-center bg-white border-t border-slate-100">
+                        <img src={logoUrl} alt="לוגו סרנדיפיטי" className="w-16 h-16 mx-auto mb-6 opacity-40 grayscale" />
+                        <p className="font-bold tracking-[0.3em] uppercase text-[12px] text-slate-400">Serendipity Experience</p>
+                        <p className="text-slate-400 font-light text-sm mt-2">© {new Date().getFullYear()} סרנדיפיטי - כל הזכויות שמורות.</p>
                     </footer>
                 </div>
             );
